@@ -1,0 +1,59 @@
+﻿@page
+@model SistemaAutenticacao.Pages.Escola.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Escola</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Escola.Nome" class="control-label"></label>
+                <input asp-for="Escola.Nome" class="form-control" />
+                <span asp-validation-for="Escola.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Escola.Nif" class="control-label"></label>
+                <input asp-for="Escola.Nif" class="form-control" />
+                <span asp-validation-for="Escola.Nif" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Escola.Email" class="control-label"></label>
+                <input asp-for="Escola.Email" class="form-control" />
+                <span asp-validation-for="Escola.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Escola.Abreviatura" class="control-label"></label>
+                <input asp-for="Escola.Abreviatura" class="form-control" />
+                <span asp-validation-for="Escola.Abreviatura" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Escola.IsActive" /> @Html.DisplayNameFor(model => model.Escola.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Escola.CreatedOn" class="control-label"></label>
+                <input asp-for="Escola.CreatedOn" class="form-control" />
+                <span asp-validation-for="Escola.CreatedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
